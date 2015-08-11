@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tasklist.CategoriaControllerSpec" tests="1" skipped="0" failures="1" errors="0" timestamp="2015-08-07T05:13:15" hostname="diego-HP" time="2.818">
+  <properties/>
+  <testcase name="test something" classname="tasklist.CategoriaControllerSpec" time="2.818">
+    <failure message="org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tasklist.CategoriaController': Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [tasklist.CategoriaController]: Constructor threw exception; nested exception is java.lang.IllegalStateException: Method on class [tasklist.Categoria] was used outside of a Grails application. If running in the context of a test using the mocking API or bootstrap Grails correctly." type="org.springframework.beans.factory.BeanCreationException">org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tasklist.CategoriaController': Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [tasklist.CategoriaController]: Constructor threw exception; nested exception is java.lang.IllegalStateException: Method on class [tasklist.Categoria] was used outside of a Grails application. If running in the context of a test using the mocking API or bootstrap Grails correctly.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1101)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1046)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956)
+	at grails.test.mixin.web.ControllerUnitTestMixin.mockController_closure2(ControllerUnitTestMixin.groovy:176)
+	at grails.test.mixin.web.ControllerUnitTestMixin.mockController(ControllerUnitTestMixin.groovy:184)
+	at org.spockframework.util.ReflectionUtil.invokeMethod(ReflectionUtil.java:153)
+	at org.spockframework.runtime.model.MethodInfo.invoke(MethodInfo.java:84)
+	at org.spockframework.runtime.extension.MethodInvocation.proceed(MethodInvocation.java:88)
+	at org.spockframework.runtime.extension.builtin.AbstractRuleInterceptor$1.evaluate(AbstractRuleInterceptor.java:37)
+	at grails.test.runtime.TestRuntimeJunitAdapter$1$2.evaluate(TestRuntimeJunitAdapter.groovy:46)
+	at org.spockframework.runtime.extension.builtin.TestRuleInterceptor.intercept(TestRuleInterceptor.java:38)
+	at org.spockframework.runtime.extension.MethodInvocation.proceed(MethodInvocation.java:87)
+	at org.spockframework.runtime.extension.MethodInvocation.proceed(MethodInvocation.java:88)
+	at org.spockframework.runtime.extension.builtin.AbstractRuleInterceptor$1.evaluate(AbstractRuleInterceptor.java:37)
+	at grails.test.runtime.TestRuntimeJunitAdapter$3$4.evaluate(TestRuntimeJunitAdapter.groovy:73)
+	at org.spockframework.runtime.extension.builtin.ClassRuleInterceptor.intercept(ClassRuleInterceptor.java:38)
+	at org.spockframework.runtime.extension.MethodInvocation.proceed(MethodInvocation.java:87)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [tasklist.CategoriaController]: Constructor threw exception; nested exception is java.lang.IllegalStateException: Method on class [tasklist.Categoria] was used outside of a Grails application. If running in the context of a test using the mocking API or bootstrap Grails correctly.
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:89)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1094)
+	... 36 more
+Caused by: java.lang.IllegalStateException: Method on class [tasklist.Categoria] was used outside of a Grails application. If running in the context of a test using the mocking API or bootstrap Grails correctly.
+	at org.grails.datastore.gorm.GormEntity$Trait$Helper.currentGormStaticApi(GormEntity.groovy:69)
+	at org.grails.datastore.gorm.GormEntity$Trait$Helper.count(GormEntity.groovy:472)
+	at tasklist.CategoriaController.&lt;init&gt;(CategoriaController.groovy:5)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:147)
+	... 38 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
